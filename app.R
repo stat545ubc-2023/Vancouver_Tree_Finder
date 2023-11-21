@@ -24,8 +24,9 @@ ui <- fluidPage(h1("How to find Vancouver trees"),
                   tabPanel("Table",DT::dataTableOutput("results")),
                   br(), br())
                 ))
-#Feature: Added parameter to plot to allow user to change colour of bars
-#Feature: Put plot and table in separate tabs
+#Feature: Added parameter to plot to allow user to change colour of bars, this can help visualize bars better and makes it more appealing
+#Feature: Put plot and table in separate tabs, this makes the app more organized and visually appealing
+#Feature: Multiple select for curb, this allows more variation and analysis of data as it offers more options for selection easily
 
 server <- function(input, output){
   filtered <- reactive({
@@ -52,7 +53,7 @@ server <- function(input, output){
   })
 }
 
-#Feature : Used DT package to create an interactive table
+#Feature : Used DT package to create an interactive table, this helps user select specific variables they want to see faster
 
 
 shinyApp(ui = ui, server = server)
