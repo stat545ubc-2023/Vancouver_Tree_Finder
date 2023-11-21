@@ -6,11 +6,14 @@ library(DT)
 library(colourpicker)
 
 vt <- read.csv("vt.csv", stringsAsFactors = FALSE)
-#print(str(vt))
+
 
 
 ui <- fluidPage(h1("How to find Vancouver trees"),
-                h3("Use this app to find where specific trees are in Vancouver"),
+                h5("This shiny app can be used to find where specific trees are in Vancouver while filtering based on diameter, height, and curb location. A plot is then generated according to counts in specific neighbourhoods when applicable and a table of the results is also shown.
+                  The open dataset vancouver_trees was used:
+                   Vancouver, British Columbia, Canada https://opendata.vancouver.ca/explore/dataset/street-trees/information
+                   Includes information licensed from the Open Government Licence – Vancouver. License: https://opendata.vancouver.ca/pages/licence/"),
                 titlePanel("Find trees according to diameter, height and location on/off curb"),
                 sidebarLayout(
                 sidebarPanel(
