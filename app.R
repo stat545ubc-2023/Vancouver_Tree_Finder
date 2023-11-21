@@ -56,7 +56,7 @@ server <- function(input, output){
   })
 }
 
-#Feature : Used DT package to create an interactive table, this helps user select specific variables they want to see faster
+#Feature : Used DT package to create an interactive table, this helps user select specific variables they want to see faster.
 
 
 shinyApp(ui = ui, server = server)
