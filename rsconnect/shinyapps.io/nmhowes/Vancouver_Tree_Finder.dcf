@@ -1,0 +1,12 @@
+name: Vancouver_Tree_Finder
+title: Vancouver_Tree_Finder
+username: nmhowes
+account: nmhowes
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 10594937
+bundleId: 7954213
+url: https://nmhowes.shinyapps.io/Vancouver_Tree_Finder/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE
