@@ -4,7 +4,7 @@
 
 This assignment demonstrates the ability to create a shiny app with unique features and successfully deploy it. 
 
-### Description of App
+### Description of Vancouver_Tree_Finder
 
 This shiny app can be used to find where specific trees are in Vancouver while filtering based on diameter, height, and curb location. A plot is then generated according to counts in specific neighbourhoods when applicable and a table of the results is also shown.
 
