@@ -18,7 +18,7 @@ ui <- fluidPage(h1("How to find Vancouver trees"),
                 sidebarLayout(
                 sidebarPanel(
                   sliderInput("diameterInput", "Diameter", 0, 1000, c(300, 500), post = "m"),
-                  sliderInput("height_range_idInput", "Height Range ID", 0, 10, c(2)),
+                  sliderInput("height_range_idInput", "Height Range ID", 0, 10, c(2), post = "ft"),
                   checkboxGroupInput("curbInput", "Is Tree Located on Curb (Yes = Y or No = N)", choices = c("Y", "N"), selected = "Y")),
                   colourpicker::colourInput(paste("col", sep="_"), "Choose colour:", "black")),
                 mainPanel(
