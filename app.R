@@ -12,10 +12,8 @@ vt <- read.csv("vt.csv", stringsAsFactors = FALSE)
 
 
 
-ui <- fluidPage(theme = shinytheme("cerulean"),
+ui <- fluidPage(
                 h1("How to find Vancouver trees"),
-                img(src = "tree.png", height = 90, width = 90),
-                img(src = "tree1.png", height = 90, width = 90),
                 h5("This shiny app can be used to find where specific trees are in Vancouver while filtering based on diameter, height, and curb location. A plot is then generated according to counts in specific neighbourhoods when applicable and a table of the results is also shown.
                   The open dataset vancouver_trees was used:
                    Vancouver, British Columbia, Canada https://opendata.vancouver.ca/explore/dataset/street-trees/information
@@ -26,12 +24,7 @@ ui <- fluidPage(theme = shinytheme("cerulean"),
                   sliderInput("diameterInput", "Diameter", 0, 1000, c(300, 500), post = "m"),
                   sliderInput("height_range_idInput", "Height Range ID", 0, 10, c(2), post = "ft"),
                   checkboxGroupInput("curbInput", "Is Tree Located on Curb (Yes = Y or No = N)", choices = c("Y", "N"), selected = "Y")),
-                      #conditionalPanel(input.curbInput == "Y",
-                        #sliderInput("plant_areaInput", "Plant Area", 0, 20, c(5))),
                   colourpicker::colourInput(paste("col", sep="_"), "Choose colour:", "black")),
-                #textOutput(),
-                  #downloadButton(label = "Download"),
-                  #downloadButton("downloadData", "Download.tsv"),
                 mainPanel(
                   tabsetPanel(
                   tabPanel("Plot", plotOutput("coolplot")),
@@ -42,10 +35,7 @@ ui <- fluidPage(theme = shinytheme("cerulean"),
 #Feature: Put plot and table in separate tabs, this makes the app more organized and visually appealing
 #Feature: Multiple select for curb, this allows more variation and analysis of data as it offers more options for selection easily
 
-#Feature A4: Added an image for easier/quick understanding of the app
-#Feature A4: Added a shiny theme for a more aesthetic looking app
-#Feature A4:
-#Addressed feedback by flipping the axes on my plot
+
 
 
 server <- function(input, output){
@@ -58,11 +48,11 @@ server <- function(input, output){
            diameter <= input$diameterInput[2],
            height_range_id == input$height_range_idInput,
            curb %in% input$curbInput,
-           #plant_area == input$plant_areaInput
+
   )
   })
 
-  #output$text <- renderText()
+
 
 
 
@@ -70,8 +60,7 @@ server <- function(input, output){
 
   output$coolplot <- renderPlot({
   ggplot(filtered(), aes(neighbourhood_name)) +
-    geom_bar(fill = input$col) +
-      coord_flip()
+    geom_bar(fill = input$col)
 
 })
 
@@ -81,14 +70,7 @@ server <- function(input, output){
   })
 }
 
-  #output$download <- downloadHandler(
-  #filename = function() {
-    #paste0(input$vt, ".tsv")
-  #},
-  #content = function(file) {
-    #vroom::vroom_write(data(), file)
-  #}
-#)
+
 
 
 
