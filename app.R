@@ -4,12 +4,16 @@ library(ggplot2)
 library(dplyr)
 library(DT)
 library(colourpicker)
+library(shinythemes)
+
+
 
 vt <- read.csv("vt.csv", stringsAsFactors = FALSE)
 
 
 
-ui <- fluidPage(h1("How to find Vancouver trees"),
+ui <- fluidPage(
+                h1("How to find Vancouver trees"),
                 h5("This shiny app can be used to find where specific trees are in Vancouver while filtering based on diameter, height, and curb location. A plot is then generated according to counts in specific neighbourhoods when applicable and a table of the results is also shown.
                   The open dataset vancouver_trees was used:
                    Vancouver, British Columbia, Canada https://opendata.vancouver.ca/explore/dataset/street-trees/information
@@ -31,6 +35,9 @@ ui <- fluidPage(h1("How to find Vancouver trees"),
 #Feature: Put plot and table in separate tabs, this makes the app more organized and visually appealing
 #Feature: Multiple select for curb, this allows more variation and analysis of data as it offers more options for selection easily
 
+
+
+
 server <- function(input, output){
   filtered <- reactive({
     if (is.null(input$curbInput)) {
@@ -40,9 +47,16 @@ server <- function(input, output){
       filter(diameter >= input$diameterInput[1],
            diameter <= input$diameterInput[2],
            height_range_id == input$height_range_idInput,
-           curb %in% input$curbInput
+           curb %in% input$curbInput,
+
   )
   })
+
+
+
+
+
+
 
   output$coolplot <- renderPlot({
   ggplot(filtered(), aes(neighbourhood_name)) +
@@ -55,6 +69,11 @@ server <- function(input, output){
   filtered()
   })
 }
+
+
+
+
+
 
 #Feature : Used DT package to create an interactive table, this helps user select specific variables they want to see faster.
 

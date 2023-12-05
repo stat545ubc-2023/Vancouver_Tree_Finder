@@ -1,5 +1,5 @@
 # STAT 545B - Assignment 3
-#### This repository is for Assignment 3 of STAT 545B. 
+#### This repository is for Assignment 3 and 4 of STAT 545B. 
 ### __Introduction__
 
 This assignment demonstrates the ability to create a shiny app with unique features and successfully deploy it. 
