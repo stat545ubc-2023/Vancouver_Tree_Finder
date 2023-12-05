@@ -1,4 +1,4 @@
-# STAT 545B - Assignment 3
+# STAT 545B - Assignment 3 and 4
 #### This repository is for Assignment 3 and 4 of STAT 545B. 
 ### __Introduction__
 
@@ -10,7 +10,9 @@ This shiny app can be used to find where specific trees are in Vancouver while f
 
 ### Files in Project Folder
 
-app.R : This is file is the code to the shiny app, the running R code can be found then be copied into R to test
+app.R : This is file is the code to the updates shiny app (Assignment 4), the running R code can be found then be copied into R to test
+
+www : This folder stores images used in the app (left - Photo credit: Tourism Vancouver / Capilano Suspension Bridge Park, right - Photo Credit Colin Spratt)
 
 vt.csv : This file contains the csv of the open dataset vancouver_trees ( The csv can be saved locally in an R project file to then be called if using the app R code)
           sourced from: 
@@ -19,7 +21,9 @@ vt.csv : This file contains the csv of the open dataset vancouver_trees ( The cs
                    
 ### Shiny app link 
 
-https://nmhowes.shinyapps.io/Vancouver_Tree_Finder/
+Assignment 3: https://nmhowes.shinyapps.io/Vancouver_Tree_Finder/
+
+Assignment 4: https://nmhowes.shinyapps.io/Vancouver_Tree_Finder_/
 
 
 
