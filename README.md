@@ -2,7 +2,7 @@
 #### This repository is for Assignment 3 and 4 of STAT 545B. 
 ### __Introduction__
 
-This assignment demonstrates the ability to create a shiny app with unique features and successfully deploy it. 
+These assignments demonstrate the ability to create a shiny app with unique features and successfully deploy it. 
 
 ### Description of Vancouver_Tree_Finder
 
